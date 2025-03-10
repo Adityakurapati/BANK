@@ -11,7 +11,7 @@ import {
         Legend
 } from "recharts"
 import {
-        Chart,
+        // Chart,
         ChartContainer,
         ChartTooltip,
         ChartTooltipContent,
@@ -78,38 +78,8 @@ export function SpendingChart() {
         }
 
         return (
-                <ChartContainer className="w-full h-full">
-                        <Chart className="w-full h-72">
-                                <ResponsiveContainer width="100%" height="100%">
-                                        <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
-                                                <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                                                <XAxis dataKey="month" />
-                                                <YAxis
-                                                        tickFormatter={(value) => `₹${(value / 1000).toFixed(0)}k`}
-                                                        width={60}
-                                                />
-                                                <ChartTooltip
-                                                        content={
-                                                                <ChartTooltipContent
-                                                                        formatter={(value, name) => [formatCurrency(value), name]}
-                                                                />
-                                                        }
-                                                />
-                                                <Legend
-                                                        content={<ChartLegendContent />}
-                                                        layout="horizontal"
-                                                        verticalAlign="top"
-                                                        align="right"
-                                                        wrapperStyle={{ paddingBottom: "20px" }}
-                                                />
-                                                <Bar dataKey="Groceries" fill="#4f46e5" radius={[4, 4, 0, 0]} />
-                                                <Bar dataKey="Entertainment" fill="#10b981" radius={[4, 4, 0, 0]} />
-                                                <Bar dataKey="Bills" fill="#f97316" radius={[4, 4, 0, 0]} />
-                                                <Bar dataKey="Shopping" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
-                                                <Bar dataKey="Other" fill="#a3a3a3" radius={[4, 4, 0, 0]} />
-                                        </BarChart>
-                                </ResponsiveContainer>
-                        </Chart>
-                </ChartContainer>
+                <div>
+                        Spending CHarts
+                </div>
         )
 }

@@ -1,54 +1,9 @@
-const withPWA=require( 'next-pwa' )( {
-        dest: 'public',
+const withPWA=require( "next-pwa" )( {
+        dest: "public",
         register: true,
         skipWaiting: true,
-        disable: process.env.NODE_ENV==='development'
 } );
 
-let userConfig={};
-try
-{
-        userConfig=require( './v0-user-next.config' );
-} catch ( e )
-{
-        // ignore error
-}
-
-/** @type {import('next').NextConfig} */
-const nextConfig={
+module.exports=withPWA( {
         reactStrictMode: true,
-        eslint: {
-                ignoreDuringBuilds: true,
-        },
-        typescript: {
-                ignoreBuildErrors: true,
-        },
-        images: {
-                unoptimized: true,
-        },
-        experimental: {
-                webpackBuildWorker: true,
-                parallelServerBuildTraces: true,
-                parallelServerCompiles: true,
-        },
-};
-
-// Merge user config
-for ( const key in userConfig )
-{
-        if (
-                typeof nextConfig[ key ]==='object'&&
-                !Array.isArray( nextConfig[ key ] )
-        )
-        {
-                nextConfig[ key ]={
-                        ...nextConfig[ key ],
-                        ...userConfig[ key ],
-                };
-        } else
-        {
-                nextConfig[ key ]=userConfig[ key ];
-        }
-}
-
-module.exports=withPWA( nextConfig );
+} );

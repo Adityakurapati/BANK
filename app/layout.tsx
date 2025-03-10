@@ -14,9 +14,6 @@ export default function RootLayout({
                         <body>
                                 <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
                                         <SidebarProvider>{children}</SidebarProvider>
-
-                                        {/* Fullscreen Toggle Button */}
-                                        <FullscreenButton />
                                 </ThemeProvider>
                         </body>
                 </html>

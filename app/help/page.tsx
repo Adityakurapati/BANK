@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { AppSidebar } from "@/components/app-sidebar"
 import { SidebarInset } from "@/components/ui/sidebar"
-import { Chatbot } from "@/components/chatbot"
+// import { Chatbot } from "@/components/chatbot"
 import { Search, Phone, Mail, MessageSquare, HelpCircle, FileText, CreditCard, Shield, ArrowRight } from "lucide-react"
 
 export default function HelpPage() {
@@ -237,7 +237,8 @@ export default function HelpPage() {
                                                                         <CardDescription>Our AI assistant can help answer your questions instantly</CardDescription>
                                                                 </CardHeader>
                                                                 <CardContent className="flex-1 overflow-hidden">
-                                                                        <Chatbot />
+                                                                        {/* <Chatbot /> */}
+                                                                        <p> ChatBOT</p>
                                                                 </CardContent>
                                                         </Card>
                                                 </TabsContent>
